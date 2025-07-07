@@ -30,8 +30,8 @@ import java.util.List;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false, unique = true)
-    private int id;
+    @Column(name = "id", updatable = false, unique = true)
+    private Integer id;
 
     @Column(name = "total_in_cents", nullable = false)
     private int totalInCents;

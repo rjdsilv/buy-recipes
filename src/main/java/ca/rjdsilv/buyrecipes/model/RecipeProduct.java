@@ -27,10 +27,12 @@ public class RecipeProduct {
     @EmbeddedId
     private RecipeProductId id;
 
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("recipeId")
     private Recipe recipe;
 
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("productId")
     private Product product;

@@ -2,18 +2,18 @@
 -- changeset rjdsilv:createInitialDatabase
 
 CREATE TABLE IF NOT EXISTS products (
-    id             INT  NOT NULL PRIMARY KEY,
+    id             INT  NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name           TEXT NOT NULL UNIQUE,
     price_in_cents INT  NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS carts (
-    id             INT NOT NULL PRIMARY KEY,
+    id             INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     total_in_cents INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS cart_items (
-    id         INT NOT NULL PRIMARY KEY,
+    id         INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     cart_id    INT NOT NULL,
     product_id INT NOT NULL,
 
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS cart_items (
 );
 
 CREATE TABLE IF NOT EXISTS recipes (
-    id         INT            NOT NULL PRIMARY KEY,
+    id         INT            NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name       TEXT           NOT NULL
 );
 

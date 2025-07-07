@@ -29,8 +29,8 @@ import java.util.List;
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false, unique = true)
-    private int id;
+    @Column(name = "id", updatable = false, unique = true)
+    private Integer id;
 
     @NotEmpty
     @Column(name = "name", unique = true, nullable = false)

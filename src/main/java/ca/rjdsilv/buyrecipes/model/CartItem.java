@@ -25,8 +25,8 @@ import lombok.Setter;
 public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false, unique = true)
-    private int id;
+    @Column(name = "id", updatable = false, unique = true)
+    private Integer id;
 
     @NotNull
     @ManyToOne
