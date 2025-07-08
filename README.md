@@ -33,7 +33,7 @@ To execute the application, please follow the steps below
 # Gets into the Project folder
 cd <user-folder>/buy-recipes
     
-# Builds the executable jar
+# Builds the executable jar and run all tests
 mvn clean verify
 
 # Executes the application
