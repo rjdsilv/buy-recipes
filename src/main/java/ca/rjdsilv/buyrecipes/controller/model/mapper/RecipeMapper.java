@@ -2,7 +2,6 @@ package ca.rjdsilv.buyrecipes.controller.model.mapper;
 
 import ca.rjdsilv.buyrecipes.controller.model.RecipeDto;
 import ca.rjdsilv.buyrecipes.model.Recipe;
-import ca.rjdsilv.buyrecipes.model.RecipeProduct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +13,13 @@ public class RecipeMapper {
     public RecipeDto toDto(Recipe recipe) {
         var productDtoList = recipe.getProducts()
                 .stream()
-                .map(RecipeProduct::getProduct)
-                .map(productMapper::toDto)
+                .map(recipeProduct -> {
+                    var productDto = productMapper.toDto(recipeProduct.getProduct());
+                    productDto.setQuantity(recipeProduct.getQuantity());
+                    productDto.setUnit(recipeProduct.getUnit());
+
+                    return productDto;
+                })
                 .toList();
 
         return RecipeDto.builder()

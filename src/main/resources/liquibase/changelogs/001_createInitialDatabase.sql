@@ -27,14 +27,14 @@ CREATE TABLE IF NOT EXISTS cart_items (
 
 CREATE TABLE IF NOT EXISTS recipes (
     id         INT            NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    name       TEXT           NOT NULL
+    name       TEXT           NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS recipe_products (
     recipe_id  INT            NOT NULL,
     product_id INT            NOT NULL,
     quantity   NUMERIC(7, 2)  NOT NULL,
-    unit       TEXT           NOT NULL,
+    unit       TEXT,
 
     CONSTRAINT pk_recipe_products__recipe_id__product_id
         PRIMARY KEY (recipe_id, product_id),

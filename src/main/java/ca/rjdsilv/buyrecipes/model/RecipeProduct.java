@@ -41,7 +41,6 @@ public class RecipeProduct {
     @Column(name = "quantity", nullable = false)
     private BigDecimal quantity;
 
-    @NotNull
-    @Column(name = "unit", nullable = false)
+    @Column(name = "unit")
     private String unit;
 }
