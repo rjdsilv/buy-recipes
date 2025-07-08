@@ -12,6 +12,10 @@ public class RecipeMapper {
     private final ProductMapper productMapper;
 
     public RecipeDto toDto(Recipe recipe) {
+        if (recipe == null) {
+            return null;
+        }
+
         var productDtoList = recipe.getProducts()
                 .stream()
                 .map(RecipeProduct::getProduct)

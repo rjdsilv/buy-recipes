@@ -11,6 +11,10 @@ public class CartMapper {
     private final CartItemMapper cartItemMapper;
 
     public CartDto toDto(Cart cart) {
+        if (cart == null) {
+            return null;
+        }
+
         return CartDto.builder()
                 .id(cart.getId())
                 .totalInCents(cart.getTotalInCents())

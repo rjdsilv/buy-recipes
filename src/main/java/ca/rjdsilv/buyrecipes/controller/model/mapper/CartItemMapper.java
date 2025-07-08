@@ -11,6 +11,10 @@ public class CartItemMapper {
     private final ProductMapper productMapper;
 
     public CartItemDto toDto(CartItem cartItem) {
+        if (cartItem == null) {
+            return null;
+        }
+
         return CartItemDto.builder()
                 .id(cartItem.getId())
                 .product(productMapper.toDto(cartItem.getProduct()))
