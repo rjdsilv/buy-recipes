@@ -1,24 +1,22 @@
 package ca.rjdsilv.buyrecipes.controller.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class ProductDto {
+public class CartDto {
     private Integer id;
 
-    @NotEmpty
-    private String name;
+    private int totalInCents;
 
-    private int priceInCents;
+    private List<CartItemDto> cartItems;
 }

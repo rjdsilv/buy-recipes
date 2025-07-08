@@ -43,13 +43,9 @@ class RecipeComponentTest {
                 () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getFirst().getId()).isEqualTo(recipe.getProducts().getFirst().getProduct().getId()),
                 () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getFirst().getName()).isEqualTo(recipe.getProducts().getFirst().getProduct().getName()),
                 () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getFirst().getPriceInCents()).isEqualTo(recipe.getProducts().getFirst().getProduct().getPriceInCents()),
-                () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getFirst().getQuantity()).isEqualTo(recipe.getProducts().getFirst().getQuantity()),
-                () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getFirst().getUnit()).isEqualTo(recipe.getProducts().getFirst().getUnit()),
                 () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getLast().getId()).isEqualTo(recipe.getProducts().getLast().getProduct().getId()),
                 () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getLast().getName()).isEqualTo(recipe.getProducts().getLast().getProduct().getName()),
-                () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getLast().getPriceInCents()).isEqualTo(recipe.getProducts().getLast().getProduct().getPriceInCents()),
-                () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getLast().getQuantity()).isEqualTo(recipe.getProducts().getLast().getQuantity()),
-                () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getLast().getUnit()).isEqualTo(recipe.getProducts().getLast().getUnit())
+                () -> assertThat(recipeDtoPage.getContent().getFirst().getProducts().getLast().getPriceInCents()).isEqualTo(recipe.getProducts().getLast().getProduct().getPriceInCents())
         );
     }
 }
