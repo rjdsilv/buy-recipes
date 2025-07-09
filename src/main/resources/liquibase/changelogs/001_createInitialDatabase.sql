@@ -33,8 +33,6 @@ CREATE TABLE IF NOT EXISTS recipes (
 CREATE TABLE IF NOT EXISTS recipe_products (
     recipe_id  INT            NOT NULL,
     product_id INT            NOT NULL,
-    quantity   NUMERIC(7, 2)  NOT NULL,
-    unit       TEXT,
 
     CONSTRAINT pk_recipe_products__recipe_id__product_id
         PRIMARY KEY (recipe_id, product_id),

@@ -16,3 +16,9 @@ server:
   shutdown: graceful
   servlet:
     context-path: /
+
+logging:
+  level:
+    root: info
+    ca.rjdsilv.buyrecipes: debug
+    org.springframework: error

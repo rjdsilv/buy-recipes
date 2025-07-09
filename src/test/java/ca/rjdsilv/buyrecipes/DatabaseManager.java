@@ -58,22 +58,22 @@ public class DatabaseManager {
 
     private String createRecipeProducts() {
         return """
-                INSERT INTO recipe_products(recipe_id, product_id, quantity, unit)
+                INSERT INTO recipe_products(recipe_id, product_id)
                 VALUES
-                    ((SELECT id FROM recipes WHERE name = '3 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 1'), 20.0, 'grams'),
-                    ((SELECT id FROM recipes WHERE name = '3 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 2'), 0.5, 'liters'),
-                    ((SELECT id FROM recipes WHERE name = '3 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 3'), 2.0, null),
-                    ((SELECT id FROM recipes WHERE name = '2 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 1'), 100.0, 'grams'),
-                    ((SELECT id FROM recipes WHERE name = '2 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 2'), 1, 'liters'),
-                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 1'), 200.0, 'grams'),
-                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 2'), 0.75, 'liters'),
-                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 3'), 4.0, null),
-                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 4'), 0.5, 'liters'),
-                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 5'), 1.0, 'cups'),
-                    ((SELECT id FROM recipes WHERE name = '4 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 1'), 150.0, 'grams'),
-                    ((SELECT id FROM recipes WHERE name = '4 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 2'), 0.25, 'liters'),
-                    ((SELECT id FROM recipes WHERE name = '4 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 3'), 3.0, null),
-                    ((SELECT id FROM recipes WHERE name = '4 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 4'), 1, 'liters')
+                    ((SELECT id FROM recipes WHERE name = '3 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 1')),
+                    ((SELECT id FROM recipes WHERE name = '3 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 2')),
+                    ((SELECT id FROM recipes WHERE name = '3 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 3')),
+                    ((SELECT id FROM recipes WHERE name = '2 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 1')),
+                    ((SELECT id FROM recipes WHERE name = '2 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 2')),
+                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 1')),
+                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 2')),
+                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 3')),
+                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 4')),
+                    ((SELECT id FROM recipes WHERE name = '5 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 5')),
+                    ((SELECT id FROM recipes WHERE name = '4 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 1')),
+                    ((SELECT id FROM recipes WHERE name = '4 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 2')),
+                    ((SELECT id FROM recipes WHERE name = '4 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 3')),
+                    ((SELECT id FROM recipes WHERE name = '4 Products Recipe'), (SELECT id FROM products WHERE name = 'Product 4'))
                 ON CONFLICT DO NOTHING;
                 """;
     }

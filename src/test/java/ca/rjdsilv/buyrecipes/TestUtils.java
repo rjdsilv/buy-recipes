@@ -11,4 +11,9 @@ public class TestUtils {
     public static <T> String toJson(T obj) {
         return MAPPER.writeValueAsString(obj);
     }
+
+    @SneakyThrows
+    public static <T> T fromJson(String json, Class<T> clazz) {
+        return MAPPER.readValue(json, clazz);
+    }
 }
